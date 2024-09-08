@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds51nxqsgdmmq"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_i82wl"]
+[ext_resource type="Texture2D" uid="uid://d0tavkngmamyq" path="res://assets/knight_sprites/default_knight_sprite.png" id="2_rabil"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_okjel"]
+radius = 11.0
+height = 52.0
+
+[sub_resource type="Animation" id="Animation_e3xb6"]
+length = 0.8
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_y3vma"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_sprite_set:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_d52y2"]
+resource_name = "jump"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghixa"]
+_data = {
+"RESET": SubResource("Animation_e3xb6"),
+"idle": SubResource("Animation_y3vma"),
+"jump": SubResource("Animation_d52y2")
+}
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-19, -59)
+script = ExtResource("1_i82wl")
+
+[node name="idle_sprite_set" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(52, -7)
+texture = ExtResource("2_rabil")
+hframes = 18
+frame = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(35, 1)
+shape = SubResource("CapsuleShape2D_okjel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ghixa")
+}
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(19, -25)
+zoom = Vector2(2.6, 2.6)
