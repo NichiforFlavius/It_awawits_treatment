@@ -468,7 +468,7 @@ sources/0 = SubResource("TileSetAtlasSource_2bamy")
 [node name="Infirmary" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_porgv")]
-position = Vector2(184, 626)
+position = Vector2(344, 626)
 
 [node name="Level_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4aw17")

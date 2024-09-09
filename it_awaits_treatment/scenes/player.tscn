@@ -1,63 +1,160 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds51nxqsgdmmq"]
+[gd_scene load_steps=23 format=3 uid="uid://ds51nxqsgdmmq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_i82wl"]
-[ext_resource type="Texture2D" uid="uid://d0tavkngmamyq" path="res://assets/knight_sprites/default_knight_sprite.png" id="2_rabil"]
+[ext_resource type="Texture2D" uid="uid://blqg5c4yt4g84" path="res://assets/mage_sprites/Idle.png" id="6_uy0ye"]
+[ext_resource type="Texture2D" uid="uid://c317kahfe1nml" path="res://assets/mage_sprites/Jump.png" id="7_exmn6"]
+[ext_resource type="Texture2D" uid="uid://dg3lmunplbvp7" path="res://assets/mage_sprites/Walk.png" id="8_e3xum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl3og"]
+atlas = ExtResource("6_uy0ye")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnqhd"]
+atlas = ExtResource("6_uy0ye")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h3t4"]
+atlas = ExtResource("6_uy0ye")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh53y"]
+atlas = ExtResource("6_uy0ye")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_113qk"]
+atlas = ExtResource("7_exmn6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opabj"]
+atlas = ExtResource("7_exmn6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8it"]
+atlas = ExtResource("7_exmn6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g366"]
+atlas = ExtResource("7_exmn6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2agp"]
+atlas = ExtResource("7_exmn6")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4hlm"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c60av"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c80w4"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihm6o"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th2wb"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fksfp"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47br7"]
+atlas = ExtResource("8_e3xum")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsuix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl3og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnqhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h3t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh53y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_113qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opabj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g366")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2agp")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4hlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c60av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c80w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihm6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th2wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fksfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47br7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_okjel"]
 radius = 11.0
-height = 52.0
-
-[sub_resource type="Animation" id="Animation_e3xb6"]
-length = 0.8
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_y3vma"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("idle_sprite_set:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_d52y2"]
-resource_name = "jump"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghixa"]
-_data = {
-"RESET": SubResource("Animation_e3xb6"),
-"idle": SubResource("Animation_y3vma"),
-"jump": SubResource("Animation_d52y2")
-}
+height = 56.0
 
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-19, -59)
+position = Vector2(-174, -41)
 script = ExtResource("1_i82wl")
 
-[node name="idle_sprite_set" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(52, -7)
-texture = ExtResource("2_rabil")
-hframes = 18
-frame = 17
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -43)
+zoom = Vector2(2.6, 2.6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(32, -28)
+sprite_frames = SubResource("SpriteFrames_rsuix")
+animation = &"jump"
+frame_progress = 0.635361
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(35, 1)
+position = Vector2(24, 6)
 shape = SubResource("CapsuleShape2D_okjel")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-"": SubResource("AnimationLibrary_ghixa")
-}
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(19, -25)
-zoom = Vector2(2.6, 2.6)
