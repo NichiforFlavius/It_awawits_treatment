@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtqdk4tey6sfe"]
+
+[ext_resource type="Texture2D" uid="uid://bm7qi8mdvxiti" path="res://assets/medival_tiles/Medieval_props_free.png" id="1_2k530"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64ygf"]
+size = Vector2(86, 22)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-23, -30.5)
+scale = Vector2(2.90323, 2.19298)
+texture = ExtResource("1_2k530")
+region_enabled = true
+region_rect = Rect2(28, 21, 31, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 17)
+shape = SubResource("RectangleShape2D_64ygf")

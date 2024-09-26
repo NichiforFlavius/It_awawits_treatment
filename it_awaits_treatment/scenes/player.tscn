@@ -139,22 +139,18 @@ animations = [{
 radius = 11.0
 height = 56.0
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 5
 position = Vector2(-174, -41)
+collision_layer = 2
 script = ExtResource("1_i82wl")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, -43)
-zoom = Vector2(2.6, 2.6)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(32, -28)
 sprite_frames = SubResource("SpriteFrames_rsuix")
 animation = &"jump"
 frame_progress = 0.635361
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(24, 6)
 shape = SubResource("CapsuleShape2D_okjel")
