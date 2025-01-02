@@ -15,6 +15,10 @@ run/main_scene="res://scenes/Infirmary.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Checkpoint="*res://scripts/checkpoint.gd"
+
 [input]
 
 move_left={
